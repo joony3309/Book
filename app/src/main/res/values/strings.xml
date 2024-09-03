@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Book</string>
+    <string name="search">검색</string>
+    <string name="price">%,d</string>
+</resources>
