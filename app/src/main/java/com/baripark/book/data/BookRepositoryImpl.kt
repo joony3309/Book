@@ -16,4 +16,8 @@ class BookRepositoryImpl(
     override fun getLocalBooks(): List<Book> {
         return bookLocalDataSource.getLocalBooks()
     }
+
+    override fun deleteBooks() {
+        bookLocalDataSource.deleteBooks()
+    }
 }

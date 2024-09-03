@@ -7,7 +7,8 @@ import com.bumptech.glide.Glide
 import java.util.Locale
 
 class BookViewHolder(
-    private val binding: ItemBookBinding
+    private val binding: ItemBookBinding,
+    private val onClick: (Book) -> Unit
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(item: Book) {
         with(binding) {
@@ -20,6 +21,9 @@ class BookViewHolder(
             author.text = item.author
             price.text = String.format(Locale.KOREA, "%,d 원", item.price.toInt())
             discount.text = String.format(Locale.KOREA, "%,d 원", item.discount.toInt())
+            root.setOnClickListener {
+                onClick(item)
+            }
         }
     }
 }

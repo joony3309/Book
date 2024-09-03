@@ -13,4 +13,7 @@ interface BookDao {
 
     @Query("SELECT * FROM Book")
     fun getBooks(): List<Book>
+
+    @Query("DELETE FROM Book")
+    fun deleteAllBooks()
 }
