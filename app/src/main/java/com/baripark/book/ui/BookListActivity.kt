@@ -2,7 +2,6 @@ package com.baripark.book.ui
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
@@ -44,7 +43,9 @@ class BookListActivity : AppCompatActivity(), BookListContract.View {
 
     private val bookListAdapter by lazy {
         BookListAdapter {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(it.link))
+//            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(it.link))
+            val intent = Intent(this, BookDetailActivity::class.java)
+            intent.putExtra("book", it)
             startActivity(intent)
         }
     }

@@ -8,4 +8,9 @@ interface BookService {
     suspend fun getBooks(
         @Query("query") query: String
     ): BookResponse
+//
+//    @GET("/v1/search/book_adv.json")
+//    suspend fun getBook(
+//        @Query("d_isbn") isbn: String
+//    ): BookResponse
 }
